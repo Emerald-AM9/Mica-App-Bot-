@@ -19,8 +19,9 @@ RestSharp（NuGet包）
 项目目录下bin\Debug\net【版本号】\Mica App.exe就是了
 ## 注意
 1.因Mica App使用到的依赖库执行AGPLv3开源协议，按照该开源协议的要求，Mica App也将同步执行；所有将Mica App代码片段投入线上使用的项目，都将需要开源并执行AGPLv3协议（参照该开源协议的“网络使用即分发”原则），谢谢配合！  
-2.从5.1.2升级5.1.4时，请在MySQL命令行执行下列指令：  
-use db1和ALTER TABLE `bread` ADD `storage_upgraded` int NOT NULL DEFAULT '0' COMMENT '库存升级次数';  
+2.从5.1.2升级5.1.4+时，请在MySQL命令行执行下列指令：  
+use 【你的数据库名】  
+ALTER TABLE `bread` ADD `storage_upgraded` int NOT NULL DEFAULT '0' COMMENT '库存升级次数';  
 可能还需要执行：  
 TRUNCATE TABLE `bread`;  
 截断数据表。  
