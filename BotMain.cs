@@ -1,12 +1,4 @@
-﻿//Mica App提供一个2KBOT的稳定存档，一般情况下请使用一个中版本下最新的小版本。
-//Copyright(C) 2022 Emerald-AM9 版权所有。
-
-//本程序是自由软件：你可以根据自由软件基金会发布的GNU Affero通用公共许可证的条款，即许可证的第3版或（您选择的）任何后来的版本重新发布它和/或修改它。。
-
-//本程序的发布是希望它能起到作用。但没有任何保证；甚至没有隐含的保证。本程序的分发是希望它是有用的，但没有任何保证，甚至没有隐含的适销对路或适合某一特定目的的保证。 参见 GNU Affero通用公共许可证了解更多细节。
-
-//您应该已经收到了一份GNU Affero通用公共许可证的副本。 如果没有，请参见<https://www.gnu.org/licenses/>。
-using Manganese.Text;
+﻿using Manganese.Text;
 using Mirai.Net.Data.Events.Concretes.Group;
 using Mirai.Net.Data.Events.Concretes.Message;
 using Mirai.Net.Data.Events.Concretes.Request;
@@ -58,7 +50,6 @@ CREATE TABLE IF NOT EXISTS `{Global.database_name}`.`bread` (
   `id` int NOT NULL AUTO_INCREMENT,
   `gid` varchar(10) NOT NULL COMMENT 'Q群号',
   `factory_level` int NOT NULL DEFAULT '1' COMMENT '面包厂等级',
-  `storage_upgraded` int NOT NULL DEFAULT '0' COMMENT '库存升级次数',
   `bread_diversity` tinyint NOT NULL DEFAULT '0' COMMENT '多样化生产状态',
   `factory_exp` int NOT NULL DEFAULT '0' COMMENT '面包厂经验',
   `breads` int NOT NULL DEFAULT '0' COMMENT '面包库存',
@@ -337,11 +328,11 @@ CREATE TABLE IF NOT EXISTS `{Global.database_name}`.`bread` (
                 }
                 // 菜单与帮助
                 Help.Execute(x);
-                // 怎么获取源代码呢？
-                if (x.MessageChain.GetPlainMessage() == "源码" || x.MessageChain.GetPlainMessage() == "如何做一个这样的机器人")
+                // 《遗言》（梅  开  二  度
+                if (x.MessageChain.GetPlainMessage() == "博客" || x.MessageChain.GetPlainMessage() == "blog")
                 {
                     await MessageManager.SendGroupMessageAsync(x.GroupId,
-                        @"请见https://github.com/Emerald-AM9/Mica-App-Bot-");
+                        @"Mica App博客正在施工中。。。");
                 }
                 // 叫人
                 if (x.MessageChain.GetPlainMessage().StartsWith("/call"))
@@ -471,7 +462,7 @@ CREATE TABLE IF NOT EXISTS `{Global.database_name}`.`bread` (
                     try
                     {
                         await MessageManager.SendGroupMessageAsync(x.GroupId,
-                        "Mica App由2kbot，Mirai等自由软件驱动");
+                        "Mica App由2kbot等开源项目驱动");
                     }
                     catch
                     {
@@ -944,7 +935,7 @@ CREATE TABLE IF NOT EXISTS `{Global.database_name}`.`bread` (
                         "社会主义好，社会主义好~",
                         //"Minecraft很好玩，但也可以试试Terraria！",
                         "So Nvidia, f**k you![黑幕|买40系就是大怨种]",
-                        "战无不胜的马克思列宁主义万岁！",
+                        //"战无不胜的马克思列宁主义万岁！",
                         "Bug是杀不完的，你杀死了一个Bug，就会有千千万万个Bug站起来！",
                         "跟张浩扬博士一起来学Jvav罢！",
                         "哼哼哼，啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊",
@@ -956,7 +947,6 @@ CREATE TABLE IF NOT EXISTS `{Global.database_name}`.`bread` (
                         "这条标语虽然没有用，但是是有用的，因为他被加上了标语",
                         "看看文档罢（恼",
                         "快去问咕咕鸟的作者（虽然不是咕咕鸟",
-                        "Mica App是一个自由软件，遵循AGPL3协议，源代码在https://github.com/Emerald-AM9/Mica-App-Bot-存放。",
                         "502 Bread Gateway!"
                     };
                     Random r = new();
@@ -964,7 +954,7 @@ CREATE TABLE IF NOT EXISTS `{Global.database_name}`.`bread` (
                     try
                     {
                         await MessageManager.SendGroupMessageAsync(x.GroupId,
-                        $"Mica App 5.1.4\r\n上次更新日期：2022/12/1\r\n修复了面包查询失败的bug\r\n---------\r\n{splashes[random]}");
+                        $"Mica App 5.1\r\n上次更新日期：2022/11/29\r\n面包厂更新\r\n---------\r\n{splashes[random]}");
                     }
                     catch
                     {
