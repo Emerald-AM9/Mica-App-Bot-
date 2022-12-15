@@ -1,5 +1,6 @@
 # Mica-App-Bot-
 Mica App提供一个2KBOT的稳定存档，一般情况下请使用一个中版本下最新的小版本。
+该仓库不再提供支持，新仓库在这里https://gitee.com/emerald-am9/mica-app-extension/
 ## 安装
 Mica App软件需求：
 MCL  
